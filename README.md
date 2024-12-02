@@ -98,3 +98,48 @@ ID: 0001; Título: O Poderoso Chefão; Diretor/a: Francis Ford Coppola; Ano de l
 ## h.	Dicas
 1. Para uma melhor experiência, mantenha o arquivo `filmes.txt` em UTF-8 e sem linhas em branco ou inconsistências no formato.
 2. Use IDs únicas para cada filme.
+
+## i. Comentários sobre as Funções Implementadas
+### **1. `idExiste`**
+- **Descrição:** Verifica se um ID de filme já existe no arquivo de dados.
+- **Lógica:** Abre o arquivo especificado e percorre linha por linha, procurando o ID informado. Retorna 1 se o ID for encontrado e 0 caso contrário.
+- **Utilização:** Evita a duplicação de IDs ao cadastrar novos filmes.
+
+### **2. `cadastrar`**
+- **Descrição:** Registra um novo filme no sistema.
+- **Lógica:** Solicita ao usuário os dados do filme (título, diretor, ano e ID) e verifica se a ID é única com a função `idExiste`. Se não houver duplicação, os dados são gravados no arquivo permanente no formato correto.
+- **Utilização:** Adiciona novos filmes ao catálogo.
+
+### **3. `obterIDRemover`**
+- **Descrição:** Obtém o ID do filme que o usuário deseja remover.
+- **Lógica:** Solicita ao usuário a entrada do ID e remove quaisquer caracteres de nova linha.
+- **Utilização:** Garante a coleta do ID de forma padronizada para ser utilizado na função `remover`.
+
+### **4. `remover`**
+- **Descrição:** Remove um filme do catálogo com base no ID fornecido.
+- **Lógica:** Cria um arquivo temporário e copia todas as entradas que não correspondem ao ID fornecido. Substitui o arquivo original pelo temporário ao final do processo, eliminando a linha do ID fornecido para remoção.
+- **Utilização:** Permite a exclusão de filmes específicos pelo ID.
+
+### **5. `exibir`**
+- **Descrição:** Mostra todos os filmes cadastrados.
+- **Lógica:** Lê e exibe o conteúdo do arquivo de dados permanentes linha por linha.
+- **Utilização:** Fornece uma visão geral dos filmes registrados.
+
+### **6. `toLowerCase`**
+- **Descrição:** Converte uma string para minúsculas.
+- **Lógica:** Itera sobre os caracteres de uma string e converte cada um para minúsculo usando `tolower`.
+- **Utilização:** Normaliza termos de busca, garantindo que buscas não sejam sensíveis a maiúsculas/minúsculas.
+
+### **7. `procurar`**
+- **Descrição:** Busca filmes com base em critérios especificados pelo usuário (ID, título, diretor ou ano).
+- **Lógica:** Solicita um critério de busca, normaliza o termo (se necessário) e analisa cada linha do arquivo comparando o termo com o campo correspondente.
+- **Utilização:** Permite localizar filmes rapidamente com base em critérios específicos.
+
+### **8. Função `main`**
+- **Descrição:** Gerencia o fluxo do programa por meio de um menu interativo.
+- **Lógica:** Apresenta as opções ao usuário e chama as funções correspondentes com base na escolha.
+- **Utilização:** Serve como ponto de entrada do programa, conectando todas as funcionalidades.
+
+"""
+
+
